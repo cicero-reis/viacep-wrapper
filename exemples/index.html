@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ViaCep Wrapper</title>
+</head>
+<body>
+    
+    <ul id="dados">
+
+    </ul>
+
+    <script src="../dist/viacep-wrapper.umd.js"></script>
+
+    <script>
+        
+        const buscaCep = viaCepWrapper.search('09181710')
+
+        dados = document.getElementById('dados')
+
+        buscaCep
+            .then(data => {
+                resultado = `<li>cep: ${data.cep}</li>
+                 <li>logradouro: ${data.logradouro}</li>
+                 <li>complemento: ${data.complemento}</li>
+                 <li>bairro: ${data.bairro}</li>
+                 <li>localidade: ${data.localidade}</li>
+                 <li>uf: ${data.uf}</li>
+                 <li>unidade: ${data.unidade}</li>
+                 <li>ibge: ${data.ibge}</li>
+                 <li>gia: ${data.gia}</li>` 
+
+                dados.innerHTML =  resultado
+            })
+            
+    </script>
+
+</body>
+</html>

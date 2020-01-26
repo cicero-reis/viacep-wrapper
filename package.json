@@ -1,0 +1,54 @@
+{
+  "name": "viacep-wrapper",
+  "version": "1.0.0",
+  "description": "A wrapper to work with the ViaCEP",
+  "main": "index.js",
+  "scripts": {
+    "clear": "rimraf lib",
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
+    "build:watch": "npm run build -- --watch",
+    "build:umd": "./node_modules/.bin/webpack --output-filename viacep-wrapper.umd.js",
+    "build:umd:min": "./node_modules/.bin/webpack --output-filename viacep-wrapper.umd.min.js -p",
+    "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
+    "test:tdd": "npm run test -- --watch"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "library"
+  ],
+  "author": "Cicero Reis <ccrphp@gmail.com>",
+  "license": "MIT",
+  "bugs": {},
+  "homepage": "",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.5.4",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/register": "^7.4.4",
+    "babel-loader": "^8.0.6",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "node-fetch": "^1.6.3",
+    "rimraf": "^3.0.0",
+    "sinon": "^2.1.0",
+    "sinon-chai": "^2.9.0",
+    "sinon-stub-promise": "^4.0.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}

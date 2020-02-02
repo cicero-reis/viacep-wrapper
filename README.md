@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/cicero-reis/viacep-wrapper.svg?branch=master)](https://travis-ci.org/cicero-reis/viacep-wrapper)
 
+[![Coverage Status](https://coveralls.io/repos/github/cicero-reis/viacep-wrapper/badge.svg?branch=master)](https://coveralls.io/github/cicero-reis/viacep-wrapper?branch=master)
+
 A wrapper to work with the [ViaCEP](https://viacep.com.br/).
 
 ## Browser Support
